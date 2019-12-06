@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 Tool for listing and extracting data from an UBI (Unsorted Block Image) image.
 
@@ -1307,7 +1308,8 @@ def processvolume(vol, volumename, args):
             inode = c.getnode()
             typ = inode.nodetype()
 
-            fullpath = os.path.join(*[savedir, volumename] + path)
+#            fullpath = os.path.join(*[savedir, volumename] + path)
+            fullpath = os.path.join(*[savedir] + path)
             try:
                 if typ ==  inode.ITYPE_FIFO:
                     os.mkfifo(fullpath)
